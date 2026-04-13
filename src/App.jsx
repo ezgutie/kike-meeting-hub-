@@ -221,11 +221,15 @@ function SplashScreen({ onEnter }) {
 function LoginScreen({ onLogin }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
+  const isAdminEmail = email.trim().toLowerCase() === ADMIN_EMAIL;
 
   const handleSubmit = () => {
     if (!name.trim() || !email.trim()) return setError("Rellena nombre y correo");
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return setError("Email no válido");
+    if (isAdminEmail && password !== "Kike2026!") return setError("Contraseña de admin incorrecta");
     onLogin(name.trim(), email.trim().toLowerCase());
   };
 
@@ -255,6 +259,21 @@ function LoginScreen({ onLogin }) {
           onChange={(e) => { setEmail(e.target.value); setError(""); }}
           onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
         />
+
+        {isAdminEmail && (
+          <>
+            <label style={s.label}>Contraseña de Admin</label>
+            <input
+              style={s.input}
+              type="password"
+              placeholder="Introduce la contraseña"
+              value={password}
+              onChange={(e) => { setPassword(e.target.value); setError(""); }}
+              onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
+            />
+          </>
+        )}
+
         <button style={s.primaryBtn} onClick={handleSubmit}>Entrar</button>
         <p style={s.loginHint}>
           Si eres Kike, entra con <strong>e.gonzalez@onmi.es</strong> para ver el panel de administración.
