@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kike Meeting Hub · ONMI</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: 'DM Sans', 'Segoe UI', sans-serif; -webkit-font-smoothing: antialiased; }
+      input:focus, textarea:focus, select:focus { border-color: rgba(46,204,113,0.5) !important; outline: none; }
+      button:hover { opacity: 0.88; }
+      ::selection { background: rgba(46,204,113,0.3); }
+      textarea { font-family: inherit; }
+      spline-viewer { --spline-viewer-bg: transparent; }
+      spline-viewer::part(logo) { display: none; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.81/build/spline-viewer.js"></script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
