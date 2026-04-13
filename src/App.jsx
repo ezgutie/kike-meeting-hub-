@@ -134,15 +134,14 @@ function SplashScreen({ onEnter }) {
       transition: "opacity 0.7s ease",
       opacity: exiting ? 0 : 1,
     }}>
-      {/* Spline 3D background */}
       <div style={{ position: "absolute", inset: 0, zIndex: 1 }}>
-        <spline-viewer
-          url="https://prod.spline.design/n6Y2sUx35oFbgT6E/scene.splinecode"
-          style={{ width: "100%", height: "100%", display: "block" }}
+        <iframe
+          src="https://my.spline.design/ticktockinteractivelanding-PXubMQNwOzIY3sHS2LyIrRMV/"
+          frameBorder="0"
+          style={{ width: "100%", height: "100%", border: "none" }}
         />
       </div>
 
-      {/* Overlay content */}
       <div style={{
         position: "absolute", inset: 0, zIndex: 2,
         display: "flex", flexDirection: "column",
